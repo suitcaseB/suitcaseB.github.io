@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>我的个人主页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .slogan {
+            color: #2c6ecf;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 5px solid #2c6ecf;
+            background-color: #e8f0fe;
+            display: inline-block;
+        }
+        .footer {
+            margin-top: 50px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>欢迎来到我的小站</h1>
+    <p>这是我的第一个网站，正在学习使用GitHub Pages搭建！</p>
+    
+    <!-- 这是你可以修改的核心标语区域 -->
+    <div class="slogan">倚靠聖靈大能 向前向后開展</div>
+    
+    <p>未来我会在这里添加更多内容。</p>
+    
+    <div class="footer">
+        最后更新于：<span id="currentDate"></span>
+    </div>
+
+    <script>
+        // 一个小脚本，自动显示当前日期
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('zh-CN');
+    </script>
+</body>
+</html>
