@@ -1,296 +1,276 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'PingFang SC'}
-    span.s1 {font: 13.0px 'PingFang SC'}
-    span.s2 {font: 13.0px 'Lucida Grande'}
-    span.s3 {font: 13.0px 'Helvetica Neue'}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuchen Yang - Hardware Engineering Portfolio</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2c6ecf;
+            --dark-blue: #1e4a8a;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+        }
+        .tagline {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Project Sections */
+        .project {
+            margin: 3rem 0;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .project h2 {
+            color: var(--dark-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .project-description {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            padding: 0 0.5rem;
+        }
+        
+        .project-subsection {
+            margin: 2.5rem 0;
+            padding: 1.8rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        
+        .project-subsection h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1.2rem;
+            font-size: 1.3rem;
+        }
+        
+        .project-image {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 8px;
+            margin: 1.2rem 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* 项目备注样式 (新添加) */
+        .project-note {
+            margin-top: 2rem;
+            padding: 1.2rem;
+            background-color: #fff8e1; /* 浅黄色背景，表示提示 */
+            border-left: 4px solid #ffb300; /* 橙色强调边框 */
+            border-radius: 6px;
+            font-size: 0.95rem;
+            color: #5d4037; /* 深褐色文字 */
+        }
+        .project-note strong {
+            color: #e65100; /* 橙色标题 */
+        }
+        
+        /* 网站全局提示样式 (新添加) */
+        .site-notice {
+            text-align: center;
+            margin: 4rem auto 3rem;
+            padding: 2rem;
+            max-width: 800px;
+            background: var(--card-bg);
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .intro ul {
+            list-style-type: none; /* 移除默认圆点 */
+            padding-left: 0;
+            max-width: 700px;
+            margin: 1.5rem auto 0; /* 上下边距 1.5rem，左右自动居中 */
+        }
+        .intro li {
+            margin-bottom: 1.1rem;
+            padding-left: 1.8rem;
+            position: relative;
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+        
+        
+
+        .intro li:before {
+            content: "▸"; /* 自定义的项目符号 */
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue); /* 使用你的主题蓝色 */
+            font-weight: bold;
+        }
+        .intro li strong {
+            color: var(--dark-blue);
+        }
+        .intro h2 { margin-bottom: 1rem; color: var(--dark-blue); }
+        .intro p { color: var(--text-light); font-size: 1.1rem; }
+
+        /* 脚注样式 */
+        .footnote {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .footnote p {
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Yuchen Yang - Hardware Engineering Portfolio&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- &lt;link rel="stylesheet" href="style.css"&gt; --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--primary-blue: #2c6ecf;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--dark-blue: #1e4a8a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--light-bg: #f8fafc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-dark: #1e293b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-light: #64748b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border-color: #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>* { margin: 0; padding: 0; box-sizing: border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--light-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--dark-blue);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.tagline {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Project Sections */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 3rem 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 12px rgba(0,0,0,0.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--dark-blue);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid var(--primary-blue);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project-description {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project-subsection {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 2.5rem 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #f8fafc;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid var(--primary-blue);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project-subsection h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--dark-blue);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.3rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project-image {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 1.2rem 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 3px 10px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.image-caption {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">项目备注样式</span> (<span class="s1">新添加</span>) */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project-note {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff8e1; /* <span class="s1">浅黄色背景，表示提示</span> */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid #ffb300; /* <span class="s1">橙色强调边框</span> */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #5d4037; /* <span class="s1">深褐色文字</span> */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.project-note strong {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #e65100; /* <span class="s1">橙色标题</span> */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">网站全局提示样式</span> (<span class="s1">新添加</span>) */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.site-notice {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 4rem auto 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 2px dashed var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro ul {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>list-style-type: none; /* <span class="s1">移除默认圆点</span> */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 700px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 1.5rem auto 0; /* <span class="s1">上下边距</span> 1.5rem<span class="s1">，左右自动居中</span> */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro li {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-dark);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro li:before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: "<span class="s2">▸</span>"; /* <span class="s1">自定义的项目符号</span> */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--primary-blue); /* <span class="s1">使用你的主题蓝色</span> */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro li strong {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--dark-blue);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro h2 { margin-bottom: 1rem; color: var(--dark-blue); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.intro p { color: var(--text-light); font-size: 1.1rem; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* <span class="s1">脚注样式</span> */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footnote {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px dashed var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footnote p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Yuchen Yang&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="tagline"&gt;Hardware Engineering &amp; Embedded Systems Portfolio&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="intro"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="intro-content-wrapper"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Engineering Portfolio&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="tagline"&gt;A passionate hardware student focused on turning theory into reliable circuits.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Hands-On Design&lt;/strong&gt; with practical implementation.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;System-Level Perspective&lt;/strong&gt; and component selection.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Structured Problem-Solving&lt;/strong&gt; through engineering methodology.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;3S Battery Management Unit for MRI-Compatible Display System&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="project-description"&gt;A custom-designed 3S battery management system for powering a tablet in an MRI environment. The design focuses on safety, reliability, and thermal management.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;1. Component Selection: Boost Converter to Linear Regulator (LM7805)&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="images/BtoL.png" class="project-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="image-caption"&gt;Transition from boost converter (inductor hazard in MRI) to linear regulator: sacrificing efficiency for safety, removing magnetic components from LM7805 module, and designing custom heatsink for 3-hour continuous operation.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;2. 3-Cell Protection Circuit&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Microcontroller/Processor Selection&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="images/5MUC.png" class="project-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="image-caption"&gt;Selection and configuration of the 5V microcontroller unit for system control.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;3. Custom Thermal Management with Aluminum Heatsink&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="images/Heatsink.png" alt="Custom aluminum heatsink design" class="project-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="image-caption"&gt;The aluminum heatsink was designed to dissipate heat from the linear regulator, ensuring safe operation.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;4. Thermal Camera Testing: With and Without Heatsink&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="images/Thermal_Innovation.png" alt="Thermal camera images comparing with and without heatsink" class="project-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="image-caption"&gt;Thermal imaging shows a significant temperature reduction when using the custom heatsink.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">设计哲学脚注</span> --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footnote"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Note: Trade-offs considered between MRI safety requirements, thermal performance, and cost efficiency.&lt;/p&gt;</p>
-<p class="p3"><span class="s3"><span class="Apple-converted-space">            </span>&lt;p&gt;</span>注：所有设计均在特定约束条件下优化（<span class="s3">MRI</span>安全、热管理、成本）<span class="s3">&lt;/p&gt;</span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2&gt;LED Light Driver - KiCAD Design&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="project-description"&gt;A complete schematic and PCB design for an LED light driver, created in KiCAD. The design includes component selection and layout for optimal performance.&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Schematic Design&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="images/LEDSche.png" alt="LED driver schematic in KiCAD" class="project-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="image-caption"&gt;The schematic for the LED driver circuit for a desktop lamp.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-subsection"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;PCB Layout&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="images/PCBLed.png" alt="LED driver PCB layout in KiCAD" class="project-image"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="image-caption"&gt;PCB editor view of the circuit. Components are placed within close proximity of their nearest connection to reduce track length. Bottom track layer is used to avoid interference.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- <span class="s1">新添加的</span>LED<span class="s1">项目说明</span> --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="project-note"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Note on Prototype:&lt;/strong&gt; Due to time constraints in this academic exercise, the design was validated through simulation and review. The focus was on mastering the complete &lt;strong&gt;schematic capture to PCB layout workflow in KiCAD&lt;/strong&gt;, including design rule checking (DRC) and generating manufacturing files (Gerbers).&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- <span class="s1">新添加的网站全局提示</span> --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="site-notice"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;This portfolio is continuously updated with new projects and findings. More hardware design work is underway and will be shared here.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p style="margin-top: 0.5rem;"&gt;<span class="s1">本作品集将持续更新，更多硬件设计项目正在进行中。</span>&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;© &lt;span id="currentYear"&gt;&lt;/span&gt; Yuchen Yang | Hardware Engineering Portfolio&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('currentYear').textContent = new Date().getFullYear();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+    <header>
+        <h1>Yuchen Yang</h1>
+        <p class="tagline">Hardware Engineering & Embedded Systems Portfolio</p>
+    </header>
+
+    <section class="intro">
+        <div class="intro-content-wrapper">
+            <h2>Engineering Portfolio</h2>
+            <p class="tagline">A passionate hardware student focused on turning theory into reliable circuits.</p>
+            <ul>
+                <li><strong>Hands-On Design</strong> with practical implementation.</li>
+                <li><strong>System-Level Perspective</strong> and component selection.</li>
+                <li><strong>Structured Problem-Solving</strong> through engineering methodology.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="project">
+        <h2>3S Battery Management Unit for MRI-Compatible Display System</h2>
+        <p class="project-description">A custom-designed 3S battery management system for powering a tablet in an MRI environment. The design focuses on safety, reliability, and thermal management.</p>
+
+        <div class="project-subsection">
+            <h3>1. Component Selection: Boost Converter to Linear Regulator (LM7805)</h3>
+            <img src="images/BtoL.png" class="project-image">
+            <p class="image-caption">Transition from boost converter (inductor hazard in MRI) to linear regulator: sacrificing efficiency for safety, removing magnetic components from LM7805 module, and designing custom heatsink for 3-hour continuous operation.</p>
+        </div>
+
+        <div class="project-subsection">
+            <h3>2. 3-Cell Protection Circuit</h3>
+            <div class="project-subsection">
+                <h3>Microcontroller/Processor Selection</h3>
+                <img src="images/5MUC.png" class="project-image">
+                <p class="image-caption">Selection and configuration of the 5V microcontroller unit for system control.</p>
+            </div>
+        </div>
+
+        <div class="project-subsection">
+            <h3>3. Custom Thermal Management with Aluminum Heatsink</h3>
+            <img src="images/Heatsink.png" alt="Custom aluminum heatsink design" class="project-image">
+            <p class="image-caption">The aluminum heatsink was designed to dissipate heat from the linear regulator, ensuring safe operation.</p>
+        </div>
+
+        <div class="project-subsection">
+            <h3>4. Thermal Camera Testing: With and Without Heatsink</h3>
+            <img src="images/Thermal_Innovation.png" alt="Thermal camera images comparing with and without heatsink" class="project-image">
+            <p class="image-caption">Thermal imaging shows a significant temperature reduction when using the custom heatsink.</p>
+        </div>
+        
+        <!-- 设计哲学脚注 -->
+        <div class="footnote">
+            <p>Note: Trade-offs considered between MRI safety requirements, thermal performance, and cost efficiency.</p>
+            <p>注：所有设计均在特定约束条件下优化（MRI安全、热管理、成本）</p>
+        </div>
+    </section>
+
+    <section class="project">
+        <h2>LED Light Driver - KiCAD Design</h2>
+        <p class="project-description">A complete schematic and PCB design for an LED light driver, created in KiCAD. The design includes component selection and layout for optimal performance.</p>
+
+        <div class="project-subsection">
+            <h3>Schematic Design</h3>
+            <img src="images/LEDSche.png" alt="LED driver schematic in KiCAD" class="project-image">
+            <p class="image-caption">The schematic for the LED driver circuit for a desktop lamp.</p>
+        </div>
+
+        <div class="project-subsection">
+            <h3>PCB Layout</h3>
+            <img src="images/PCBLed.png" alt="LED driver PCB layout in KiCAD" class="project-image">
+            <p class="image-caption">PCB editor view of the circuit. Components are placed within close proximity of their nearest connection to reduce track length. Bottom track layer is used to avoid interference.</p>
+        </div>
+        
+        <!-- 新添加的LED项目说明 -->
+        <div class="project-note">
+            <p><strong>Note on Prototype:</strong> Due to time constraints in this academic exercise, the design was validated through simulation and review. The focus was on mastering the complete <strong>schematic capture to PCB layout workflow in KiCAD</strong>, including design rule checking (DRC) and generating manufacturing files (Gerbers).</p>
+        </div>
+    </section>
+    
+    <!-- 新添加的网站全局提示 -->
+    <div class="site-notice">
+        <p>This portfolio is continuously updated with new projects and findings. More hardware design work is underway and will be shared here.</p>
+        <p style="margin-top: 0.5rem;">本作品集将持续更新，更多硬件设计项目正在进行中。</p>
+    </div>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Yuchen Yang | Hardware Engineering Portfolio</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
