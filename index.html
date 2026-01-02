@@ -179,6 +179,212 @@
             border-top: 1px solid var(--border-color);
             margin-top: 3rem;
         }
+        .technical-approach {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 20px 0;
+          }
+          .technical-approach h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+          }
+          .technical-approach ul {
+            padding-left: 20px;
+          }
+          .technical-approach li {
+            margin-bottom: 8px;
+          }
+          .technical-approach p {
+            margin: 10px 0;
+          }
+          .skills-section {
+            margin: 40px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #2c3e50;
+        }
+        
+        .skills-content {
+            display: flex;
+            flex-direction: column; /* Stack vertically */
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .skills-text {
+            width: 100%; /* Take full width */
+        }
+        
+        .skills-image {
+            width: 100%; /* Take full width */
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .filter-design-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        /* Learning point styling */
+        .learning-point {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .learning-point:last-child {
+            border-bottom: none;
+        }
+        
+        .learning-point p:first-child {
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .learning-point p:last-child {
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .relevance-box {
+            background: #f0f8ff;
+            border: 1px solid #d1e7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .relevance-box h5 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .relevance-box p {
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .tools-used {
+            margin-top: 25px;
+        }
+        
+        .tools-used h5 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .tools-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tool-tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            border: 1px solid #bdc3c7;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .key-insights, .methodology, .experimental-design {
+            margin: 25px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .key-insights {
+            background: #fff9e6;
+            border-left: 4px solid #f1c40f;
+        }
+        
+        .methodology {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+        }
+        
+        .experimental-design {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+        }
+        
+        .method-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .method-table th, .method-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .method-table th {
+            text-align: left;
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #2c3e50;
+            width: 30%;
+        }
+        
+        .insight-item {
+            margin: 15px 0;
+            padding-left: 20px;
+            border-left: 3px solid #27ae60;
+        }
+        
+        .engineering-takeaway {
+            background: #e8f8f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            font-style: italic;
+            border-left: 4px solid #16a085;
+        }
+        .image-with-caption {
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .image-with-caption img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            line-height: 1.4;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -206,7 +412,7 @@
         <div class="project-subsection">
             <h3>1. Component Selection: Boost Converter to Linear Regulator (LM7805)</h3>
             <img src="images/BtoL.png" class="project-image">
-            <p class="image-caption">Transition from boost converter (inductor hazard in MRI) to linear regulator: sacrificing efficiency for safety, removing magnetic components from LM7805 module, and designing custom heatsink for 3-hour continuous operation.</p>
+            <p class="image-caption">Transition from boost converter (inductor hazard in MRI) to linear regulator: <br> sacrificing efficiency for safety <br> removing magnetic components from LM7805 module <br>  designing custom heatsink for 3-hour continuous operation.</p>
         </div>
 
         <div class="project-subsection">
@@ -250,13 +456,63 @@
         <div class="project-subsection">
             <h3>PCB Layout</h3>
             <img src="images/PCBLed.png" alt="LED driver PCB layout in KiCAD" class="project-image">
-            <p class="image-caption">PCB editor view of the circuit. Components are placed within close proximity of their nearest connection to reduce track length. Bottom track layer is used to avoid interference.</p>
+            <p class="image-caption">PCB editor view of the circuit. <br>Components are placed within close proximity of their nearest connection to reduce track length. <br>Bottom track layer is used to avoid interference.</p>
         </div>
+        <section class="project">
+            <h2>NRZ vs. RZ Signal Performance Analysis</h2>
+            <p class="project-description">
+                In ELEC 486 optical communications project, I compared the performance of Non-Return-to-Zero (NRZ) and Return-to-Zero (RZ) signaling schemes under varying attenuation levels using eye diagram analysis and Q-factor measurements in OptiWave's OptiSystem simulation environment.
+            </p>
         
-        <!-- 新添加的LED项目说明 -->
-        <div class="project-note">
-            <p><strong>Note on Prototype:</strong> Due to time constraints in this academic exercise, the design was validated through simulation and review. The focus was on mastering the complete <strong>schematic capture to PCB layout workflow in KiCAD</strong>, including design rule checking (DRC) and generating manufacturing files (Gerbers).</p>
+            <div class="technical-approach">
+                <h3>🛠 Technical Approach</h3>
+                <img src="images/OptiSlogo.png" alt="Eye diagram showing signal degradation due to EMI and improvement after filtering" class="project-image">
+                
+                <p><strong>Tool:</strong> OptiWave OptiSystem 18 (industry-standard optical network design software)</p>
+                <p><strong>Methodology:</strong></p>
+            <ul>
+                <li>Built end-to-end optical transmission systems with NRZ/RZ pulse generators</li>
+                <li>Varied attenuation levels (95–118 dB) and measured received power</li>
+                <li>Analyzed signal integrity using Eye Diagram Analyzer and Q-factor calculations</li>
+                <li>Compared performance thresholds for both modulation formats</li>
+            </ul>
         </div>
+                </p>
+            </div>
+        
+            <div class="project-subsection">
+                <h3> 1.Signal Integrity Analysis: NRZ vs RZ Under Varying Attenuation</h3>
+                <img src="images/EyeDia.png" alt="Schematic and frequency response of the designed low-pass filter" class="project-image">
+                <p class="image-caption">
+                    At High Received Power (Pr = 0 dBm):<br>RZ: Eye diagram remained wide open at 95 dB attenuation <br> NRZ: Eye only partially open at 98 dB attenuation <br> Key Findings: RZ provides 3 dB better attenuation tolerance but requires 2× bandwidth compared to NRZ
+                </p>
+            </div>
+        
+            <div class="project-subsection">
+                <h3>2.Optical Signal Performance Analysis</h3>
+                
+                <img src="images/EntireSystem.png" alt="Complete OptiWave simulation model for optical signal testing">
+                <p class="image-caption">
+                    Full simulation setup: PRBS generator creates test patterns → NRZ/RZ modulation → 
+                    laser transmission → variable attenuation → receiver with noise filtering → 
+                    eye diagram and BER analysis
+                </p>
+                <p><strong>The Question:</strong> How much can we weaken an optical signal before it becomes unreadable?</p>
+                
+                <div class="experimental-design">
+                    <p><strong>How I Tested It:</strong></p>
+                    <ul>
+                        <li><strong>Changed one thing:</strong> Attenuation (like adding sunglasses to a flashlight)</li>
+                        <li><strong>Measured:</strong> Signal quality using eye diagrams</li>
+                        <li><strong>Compared:</strong> Two blinking patterns (NRZ vs. RZ)</li>
+                        <li><strong>Found:</strong> RZ sees better in the dark but talks twice as fast</li>
+                    </ul>
+                </div>
+                
+                <div class="engineering-takeaway">
+                    <p><strong>Engineering Insight:</strong> Every communication system balances signal integrity against bandwidth usage. Sometimes we need clearer vision (RZ), sometimes we need to save bandwidth (NRZ).</p>
+                </div>
+            </div>
     </section>
     
     <!-- 新添加的网站全局提示 -->
